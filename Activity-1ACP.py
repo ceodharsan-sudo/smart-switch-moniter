@@ -1,8 +1,11 @@
-numbers = [2, 3, 2, 4, 3, 5, 5]
-result = 0
-for num in numbers:
-    result = result ^ num
-if result != 0:
-    print("The odd occurring number is:", result)
-else:
-    print("No odd occurring number found")
+switches = 0
+switches = switches | 1
+switches = switches | 2
+switches = switches | 4
+print("Switch 1:", "ON" if switches & 1 else "OFF")
+print("Switch 2:", "ON" if switches & 2 else "OFF")
+print("Switch 3:", "ON" if switches & 4 else "OFF")
+print("Switch 4:", "ON" if switches & 8 else "OFF")
+switches = switches & ~2
+print("After turning OFF switch 2:")
+print("Switch 2:", "ON" if switches & 2 else "OFF")
